@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cmath>
+
+int main()
+{	
+	setlocale(LC_ALL, "rus");
+	int hours, minutes, seconds;
+	cin >> seconds;
+	hours = seconds / 3600;
+	minutes = seconds / 60;
+	cout << "Часы: " << hours << endl;
+	cout << "Минуты: " << minutes << endl;
+
+}
+2
+
+using namespace std;
+int main()
+{
+setlocale(LC_ALL,"Ru");
+double S,pi,R,L;
+cout<<"Введите длину окружности: ";
+cin>>L;
+pi=3.14;
+R = L / 2.0 * pi;
+S = pow(pi, 2) * pow(R, 2)
+cout<<"Площадь окружности = "<< S <<endl;
+}
+
+3
+int main() {
+    setlocale(LC_ALL, "RUS");
+    float S, v, t, a;
+    cin >> v >> t >> a;
+    S = v * t + (a * pow(t, 2)) / 2;
+    cout << "Расстояние: " << S << endl;
+}
