@@ -1,0 +1,77 @@
+
+#include <iostream>
+
+using namespace std;
+
+// 1
+int main()
+{	
+	setlocale(LC_ALL, "rus");
+	int hours, minutes, seconds;
+	cin >> seconds;
+	hours = seconds / 3600;
+	minutes = seconds / 60;
+	cout << "Часы: " << hours << endl;
+	cout << "Минуты: " << minutes << endl;
+
+}
+// 2
+int main() {
+	setlocale(LC_ALL, "rus");
+
+	float a;
+	cin >> a;
+	int b;
+	float c, d;
+	b = a;
+	b = b * 1;
+	c = (a - b) / 0.1;
+	d = (a - b) / 0.01;
+	cout << "Доллары: " << b << endl;
+	if (d >= 100) {
+		cout << "Центов: " << c << endl;
+	}
+	if (c < 10) {
+		cout << "Центов: " << d << endl;
+	}
+}
+// 3
+int main() {
+	setlocale(LC_ALL, "RUS");
+
+	int a;
+	cin >> a;
+	int b = a / 7;
+	int c = a % 7;
+	cout << "Неделей: " << b;
+	cout << "Дней: " << c;
+}
+ 4
+int main() {
+	setlocale(LC_ALL, "RUS");
+	int s;
+	float t;
+	cin >> s;
+	cin >> t;
+	float t2 = t * 60;
+	float v = s / t2;
+	float v2 = v * 3.6;
+	cout << "Скорость: " << v2 << " км/ч" << endl;
+
+}
+ 5
+int main() {
+	setlocale(LC_ALL, "RUS");
+	int a, b, c;
+	cout << "Введите сумму денежного вклада в евро: ";
+	cin >> a;
+
+	cout << "Введите процент годовых, которые выплачивает банк: ";
+	cin >> b;
+
+	c = (a * b / 100) / 12;
+	int d = a / 12 + c;
+
+	cout << "Сумма, выплачиваемая банком вкладчику каждый месяц: " << d << " евро";
+
+}
