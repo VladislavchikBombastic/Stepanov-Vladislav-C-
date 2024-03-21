@@ -1,1 +1,113 @@
+#include <iostream>
+
+using namespace std;
+// 1
+int main() {
+    setlocale(LC_ALL, "RUS");
+    int a;
+    cin >> a;
+    if (a <= 999999 && a > 99999) {
+        int b = a / 1000;
+        int c = a % 1000;
+        int b1, b2, b3;
+        int c1, c2, c3;
+        b1 = b % 10;
+        b2 = (b % 100) / 10;
+        b3 = (b % 1000) / 100;
+        c1 = c % 10;
+        c2 = (c % 100) / 10;
+        c3 = (c % 1000) / 100;
+        if (b3 + b2 + b1 == c3 + c2 + c1) {
+            cout << "Число счастливое";
+        }
+        else if (b3 + b2 + b1 != c3 + c2 + c1) {
+            cout << "Число не счастливое";
+        }
+    }
+    else {
+        cout << "Error" << endl;
+    }
+}
+// 2
+int main() {
+    int a;
+    cin >> a;
+    if (a <= 9999 && a > 999) {
+        int b1 = a % 10;
+        int b = (a % 100) / 10;
+        int c1 = (a % 10000) / 1000;
+        int c = (a % 1000) / 100;
+        cout << c << c1 << b1 << b << endl;
+    }
+    else {
+        cout << "Error" << endl;
+    }
+}
+// 3
+int main() {
+    int a;
+    int var;
+    const int size = 7;
+    int mas[size];
+    for (int i = 0; i < 7; i++) {
+        cin >> a;
+        mas[i] = a;
+    }
+    for (int i = 0; i < size; i++) {
+        cout << mas[i] << " ";
+    }
+    cout << endl;
+    var = mas[0];
+    for (int i = 0; i < size; i++) {
+        if (var < mas[i]) {
+            var = mas[i];
+        }
+        if (var >= mas[i]) {
+            var = var;
+        }
+    }
+    cout << "max: " << var;
+}
+// 4
+int main() {
+    setlocale(LC_ALL, "RUS");
+    double weight;
+    double fuelperkm;
+    double ab, bc;
+    fuelperkm = 0;
+    cout << "Расстояние от A до B: ";
+    cin >> ab;
+    cout << "Расстояние от B до C: ";
+    cin >> bc;
+    cout << "Вес: ";
+    cin >> weight;
+    if (weight <= 500) {
+        fuelperkm = 1;
+    }
+    else if (weight <= 1000) {
+        fuelperkm = 4;
+    }
+    else if (weight <= 1500) {
+        fuelperkm = 7;
+    }
+    else if (weight <= 2000) {
+        fuelperkm = 9;
+    }
+    else if (weight > 2000) {
+        cout << "Слишком большой груз" << endl;
+        return 0;
+    }
+    double fuelab = ab * fuelperkm;
+    double fuelbc = bc * fuelperkm;
+
+    double fullfuel = fuelab + fuelbc;
+    if (fullfuel <= 300) {
+        cout << "Минимальное кол-во топлива для дозаправки: " << fullfuel << " литров";
+    }
+    else {
+        cout << "Топлива не хватает.";
+    }
+
+}
+
 
