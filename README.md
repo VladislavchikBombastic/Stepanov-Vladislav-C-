@@ -5,3 +5,4 @@
 # 2.03 - https://github.com/VladislavchikBombastic/Stepanov-Vladislav-C-/blob/main/dz2.03
 # 18.03 - https://github.com/VladislavchikBombastic/Stepanov-Vladislav-C-/blob/main/dz18.03
 # 9.03 - https://github.com/VladislavchikBombastic/Stepanov-Vladislav-C-/blob/main/dz9.03
+# 4.04 - https://github.com/VladislavchikBombastic/Stepanov-Vladislav-C-/blob/main/dz4.04
