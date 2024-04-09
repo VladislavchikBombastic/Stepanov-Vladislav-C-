@@ -26,17 +26,10 @@ int main() {
 	chislo(a);
 }
 // 2
-int searchind(int mas[], int size, int ind) {
-	setlocale(LC_ALL, "RUS");
+void searchind(int mas[], int size, int a) {
 	for (int i = 0; i < size; i++) {
-		int var = 0;
-		if (ind == mas[i]) {
-			cout << "Индекс в массиве: ";
-			return i;
-		}
-		if (i == size - 1 && ind != mas[i]) {
-			cout << "Числа нет в массиве";
-			return 0;
+		if (a == mas[i]) {
+			cout << "In list" << "\n" << "index: " << i << endl;
 		}
 		else {
 			continue;
@@ -44,10 +37,8 @@ int searchind(int mas[], int size, int ind) {
 	}
 }
 int main() {
-	setlocale(LC_ALL, "RUS");
-	int mas[] = { 1, 3, 5, 2, 8, 10};
+	int mas[] = { 1, 3, 5, 6, 6, 6, 2, 10 };
 	int a;
-	cout << "Введите число: ";
 	cin >> a;
-	cout << searchind(mas, 6, a);
+	searchind(mas, 8, a);
 }
