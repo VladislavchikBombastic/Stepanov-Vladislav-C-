@@ -1,0 +1,181 @@
+#include <iostream>
+ 
+using namespace std;
+// 1
+int main() {
+	const int size = 10;
+	int var = 0;
+	int mas[size];
+	srand(time(NULL));
+	for (int i = 0; i < size; i++) {
+		mas[i] = 1 + rand() % (10 - 1 + 1);
+		cout << mas[i] << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < size - 1; i++) {
+		if (mas[i] > var) {
+			var = mas[i];
+		}
+		if (mas[i] < var) {
+			var = var;
+		}
+	}
+	cout << "max: " << var;
+	cout << endl;
+
+	for (int i = 0; i < size; i++) {
+		if (mas[i] < var) {
+			var = mas[i];
+		}
+		if (mas[i] > var) {
+			var = var;
+		}
+	}
+	cout << "min: " << var;
+}
+// 2
+int main() {
+	const int size = 10;
+	int min, max;
+	cout << "min: ";
+	cin >> min;
+	cout << "max: ";
+	cin >> max;
+	int num;
+	cout << "number: ";
+	cin >> num;
+	int var = 0;
+	int mas[size];
+	srand(time(NULL));
+	for (int i = 0; i < size; i++) {
+	mas[i] = min + rand() % (max - min + 1);
+	cout << mas[i] << " ";
+	}
+	cout << endl;
+	for (int i = 0; i < size - 1; i++) {
+		if (num > mas[i]) {
+			var += mas[i];
+		}
+	}
+	cout << "summa: " << var << endl;
+}
+// 3
+int main() {
+	setlocale(LC_ALL, "RUS");
+	int r1, r2, max, min;
+	const int n = 12;
+	double a[n];
+
+	cout << "Сумма за все месяца\n";
+	for (int i = 0; i < n; i++)
+	{
+		cout << "Месяц: " << i + 1 << ": ";
+		cin >> a[i];
+	}
+
+	cout << "Начальный месяц, конечный месяц: \n";
+	cin >> r1 >> r2;
+
+	max = min = r1 - 1;
+	for (int i = r1; i < r2; i++)
+	{
+		if (a[i] > a[max]) max = i;
+		if (a[i] < a[min]) min = i;
+	}
+
+	cout << "Наибольшая прибыль: " << max + 1  << " месяц" << "\n";
+	cout << "Минимальная прибыль: " << min + 1 << " месяц" << "\n";
+}
+// 4
+int main() {
+	setlocale(LC_ALL, "RUS");
+	const int size = 10;
+	int mas[size] = { 2, 1, -5, 19, 11, 2, 8, -4, 21, 5 };
+	int indMax = 0;
+	int indMin = 0;
+	int MinMax = 1;
+	int clear = 1;
+	int minusindex1 = 0;
+	int minusindex2 = 0;
+	int minusum = 0;
+	int count = 0;
+	int mincount = 0;
+	int maxcount = 0;
+	// 4.1
+	int var = 0;
+	for (int i = 0; i < size; i++) {
+		if (mas[i] < 0) {
+			var += mas[i];
+		}
+	}
+	cout << "Сумма отрицательных элем-ов: " << var;
+	cout << endl;
+	//	// 4.2
+	int min = 0;
+	int max = 0;
+	for (int i = 1; i < size; i++) {
+		if (min > mas[i]) {
+			min = mas[i];
+		}
+		if (min < mas[i]) {
+			min = min;
+		}
+		if (max > mas[i]) {
+			max = max;
+		}
+		if (max < mas[i]) {
+			max = mas[i];
+		}
+	}
+	for (int i = 0; i < size; i++) {
+		if (mas[i] == max) {
+			max = i;
+			maxcount++;
+			if (maxcount == 1) {
+				break;
+			}
+		}
+	}
+	for (int i = 0; i < size; i++) {
+		if (mas[i] == min) {
+			min = i;
+			mincount++;
+			if (mincount == 1) {
+				break;
+			}
+		}
+	}
+	cout << "m: " << min << "\n" << max << endl;
+	for (int i = min + 1; i < max; i++) {
+		MinMax *= mas[i];
+	}
+	cout << MinMax << endl;
+// 4.3
+	for (int i = 0; i < size; i++) {
+		if (i % 2 == 0) {
+			clear *= mas[i];
+		}
+	}
+	cout << clear << endl;
+
+// 4.4
+	for (int i = 0; i < size; i++) {
+		if (mas[i] < 0) {
+			minusindex2 = i;
+		}
+	}
+	for (int i = 0; i < size; i++) {
+		if (mas[i] < 0) {
+			count++;
+			minusindex1 = i;
+			if (count > 0) {
+				break;
+			}
+		}
+	}
+	cout << "first: " << minusindex1 << endl << "last: " << minusindex2 << endl;
+	for (int i = minusindex1 + 1; i < minusindex2; i++) {
+		minusum += mas[i];
+	}
+	cout << "Summa: " << minusum;
+}
